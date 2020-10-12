@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - [Documentation] Update README to add information about `tileState.active`
+- Removed check for iceGatheringState to be complete for bypassing gathering ice candidate again
 
 ### Removed
 

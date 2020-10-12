@@ -76,11 +76,8 @@ export default class FinishGatheringICECandidatesTask extends BaseTask {
       );
     }
 
-    // To bypass waiting for events, it is required that "icegatheringstate" to be complete and sdp to have candidate
-    if (
-      this.context.peer.iceGatheringState === 'complete' &&
-      new DefaultSDP(this.context.peer.localDescription.sdp).hasCandidates()
-    ) {
+    // To bypass waiting for events, it is required that sdp to have candidate
+    if (new DefaultSDP(this.context.peer.localDescription.sdp).hasCandidates()) {
       this.context.logger.info(
         'ice gathering state is complete and candidates are in SDP; bypass gathering'
       );
